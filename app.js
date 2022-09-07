@@ -14,14 +14,14 @@ function createMainWindow() {
     // kiosk: true,
   });
 
-  mainWindow.loadFile('index.html');
+  mainWindow.loadFile('labels.html');
 
   // show index.html when ready
   mainWindow.once('ready-to-show', () => {
     mainWindow.maximize();
     mainWindow.show();
     // open dev tools Remove for production
-    mainWindow.webContents.openDevTools();
+    // mainWindow.webContents.openDevTools();
   });
 
   mainWindow.on('closed', () => {
@@ -54,7 +54,7 @@ async function doClean() {
     setTimeout(() => {
       // ... heavy operation THINK how to remove timeout and wait for operation end instead
       resolve();
-    }, 3000);
+    }, 1);
   });
 }
 

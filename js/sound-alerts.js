@@ -13,7 +13,7 @@ function welcomeAlert(redirect, redirectUrl) {
   audio.play();
   setTimeout(() => {
     redirect(redirectUrl);
-  }, 550);
+  }, 600);
 }
 
 function goodbyeAlert(redirect, redirectUrl) {
@@ -21,5 +21,5 @@ function goodbyeAlert(redirect, redirectUrl) {
   audio.play();
   setTimeout(() => {
     redirect(redirectUrl);
-  }, 550);
+  }, 600);
 }
