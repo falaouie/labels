@@ -1,0 +1,408 @@
+html, body {
+  margin: 20px;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 35mm 35mm 35mm 35mm 35mm 35mm 35mm 35mm;
+}
+
+.label-top {
+  border: 1px solid black;
+}
+
+table {
+width: 100%;
+margin: 0.2em auto;
+border-collapse: collapse;
+}
+/* table td.shrink {
+  white-space:nowrap
+}
+table td.tdGrey {
+  background-color: #f2f2f2;
+}
+.evenGrey table {
+width: 100%;
+margin: 0.2em auto;
+border-collapse: collapse;
+}
+
+.evenGrey tr:nth-child(even) {
+background-color: #f2f2f2;
+}
+.oddGrey tr:nth-child(odd) {
+background-color: #f2f2f2;
+} */
+
+div {
+display: inline-block;
+align-content: center;
+}
+/* div.button {
+  color:white;
+  background-color: black;
+  padding: 5px;
+  margin:5px;
+  font-size: 1em;
+  box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+} */
+/* p {
+page-break-before : always;
+} */
+
+/* table.orders{
+  width: 98%;
+  margin: 0.5em auto;
+  border-collapse: collapse;
+}
+table.extraSmall{
+  width: 10%;
+  margin: 0.5em auto;
+  border-collapse: collapse;
+} */
+/* table.small{
+  width: 50%;
+  margin: 0.5em auto;
+  border-collapse: collapse;
+} */
+/* table.medium{
+  width: 80%;
+  margin: 0.5em auto;
+  border-collapse: collapse;
+} */
+
+/* .redMsg {
+color: red;
+}
+
+.greenMsg {
+color: green;
+} */
+
+/* @media screen {
+   .print-only {
+       display: none;
+    }
+}
+
+@media print {
+ .screen-only {
+     display: none;
+  }
+  .example-print {
+     display: inline-table;
+  }
+}
+@media print {
+.receipt {
+  width: 80mm;
+  }
+} */
+
+.mouse {
+cursor: pointer;
+}
+/* 
+button {
+margin: 5px;
+padding: 5px;
+min-height: 50px;
+font-size: 18px;
+width: 140px;
+text-align: center;
+cursor: pointer;
+outline: none;
+color: black;
+background-color: #808080;
+border: none;
+border-radius: 15px;
+box-shadow: 0 9px #999;
+}
+
+button:hover {background-color: #A9A9A9}
+
+button:active {
+background-color: #C0C0C0;
+color: black;
+box-shadow: 0 5px #666;
+transform: translateY(4px);
+}
+
+  button:disabled,
+  button[disabled]{
+      background-color: #f2f2f2;
+      color: #C0C0C0;
+      padding: 5px;
+      margin:5px;
+      font-size: 1em;
+      display: inline-block;
+      border: none;
+      box-shadow: none;
+      cursor: not-allowed;
+  }
+  .small-green-btn {
+      background-color: green;
+      border: none;
+      color: white;
+      padding: 5px 7px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1em;
+      width:70px;
+  }
+  .small-red-btn {
+      background-color: red;
+      border: none;
+      color: white;
+      padding: 5px 7px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1em;
+      width:70px;
+  }
+  .button-140 {
+    margin: 5px;
+    padding: 5px;
+    min-height: 50px;
+    font-size: 18px;
+    width: 140px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: black;
+    background-color: #808080;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  .button-140-paymentsDue {
+    margin: 5px;
+    padding: 5px;
+    min-height: 50px;
+    font-size: 18px;
+    width: 140px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: black;
+    background-color: red;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  .button-120 {
+    margin: 5px;
+    padding: 5px;
+    min-height: 50px;
+    font-size: 18px;
+    width: 120px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: black;
+    background-color: #808080;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  .button-100 {
+    margin: 5px;
+    padding: 5px;
+    min-height: 50px;
+    font-size: 18px;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: black;
+    background-color: #808080;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  .logout-button {
+        background-color: #C0C0C0;
+        color: black;
+        padding: 7px;
+        margin:5px;
+        border-radius: 10px;
+        margin:7px;
+        font-size: 1em;
+        display: inline-block;
+    }
+    
+.accept-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px;
+    border-radius: 1px;
+    margin:5px;
+    font-size: 1em;
+    display: inline-block;
+}
+
+.cancel-button {
+      background-color: #566573;
+      color: white;
+      padding: 5px;
+      border-radius: 1px;
+      margin:5px;
+      font-size: 1em;
+      display: inline-block;
+  }
+
+.submit-green-button {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 5px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    width:auto;
+  }
+
+  .submit-yellow-button {
+        background-color: #FDD017;
+        color: black;
+        padding: 5px;
+        border-radius: 1px;
+        margin:5px;
+        font-size: 1em;
+        display: inline-block;
+    }
+
+    .submit-red-button {
+      background-color: red;
+      border: none;
+      color: white;
+      padding: 5px 7px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1em;
+      width:auto;
+      }
+
+  .linkButton {
+    background: none;
+    border: none;
+    color: #0066ff;
+    padding: 8px 8px;
+    text-align: center;
+    text-decoration: bold;
+    display: inline-block;
+    font-size: 1em;
+ }
+
+ .linkGreenButton {
+   background: none;
+   border: none;
+   color: #4CAF50;
+   padding: 8px 15px;
+   text-align: center;
+   text-decoration: bold;
+   display: inline-block;
+   font-size: 1em;
+}
+
+.linkRedButton {
+  background: none;
+  border: none;
+  color: #FF0000;
+  padding: 8px 15px;
+  text-align: center;
+  text-decoration: bold;
+  display: inline-block;
+  font-size: 1em;
+}
+
+.deleteButton
+{
+  background-image: url('../img/deleteRed.png');
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  
+  width: 12px;
+  height: 12px;
+  border: 0px;
+  background-color: #eceeee;
+  cursor: pointer;
+  outline: 0;
+  }
+
+  .editButton
+  {
+    background-image: url('../img/editIMG.gif');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    
+    width: 16px;
+    height: 16px;
+    border: 0px;
+    background-color: #eceeee;
+    cursor: pointer;
+    outline: 0;
+    }
+
+  .addButton
+  {
+    background-image: url('../img/add.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    
+    width: 16px;
+    height: 16px;
+    border: 0px;
+    background-color: none;
+    cursor: pointer;
+    outline: 0;
+    }
+
+.container {
+  position: relative;
+  width: 100%;
+}
+.column1 {
+ text-align: center;
+}
+a {
+color: blue;
+text-decoration: none;
+} */
+
+
+/* @media screen and (max-width: 767px) {
+  .button-140 {
+      padding: 2px 2px;
+      font-size: 12px;
+      width: 80px;
+      height: 40px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      color: black;
+      background-color: #808080;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 5px #999;
+  }
+  .logout-button {
+      padding: 2px 2px;
+      font-size: 12px;
+      width: 80px;
+      height: 40px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      color: black;
+      background-color: #C0C0C0;
+      border: none;
+      border-radius: 3px;
+      box-shadow: 0 5px #999;
+  }
+} */

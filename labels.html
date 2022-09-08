@@ -5,10 +5,224 @@
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
     <title>Silver System Labels</title>
     <link rel="stylesheet" href="./css/labels.css">
+    <script src="./js/label_selector.js" defer></script>
+    <style>
+      @media screen {
+            table, table tr, table td {
+            border-top: #000 solid 1px;
+            border-bottom: #000 solid 1px;
+            border-left: #000 solid 1px;
+            border-right: #000 solid 1px;
+            }
+            .bolded{
+         font-weight: bold;
+       }
+        }
+        @media print {
+           .screen-only {
+               visibility: hidden;
+            }
+        }
+        table.small{
+          width: 50%;
+          margin: 0.5em auto;
+          border-collapse: collapse;
+        }
+      </style>
   </head>
 <body>
-  <div>
-    <h1>Labels</h1>
+  <script>
+    let totalLabels = 12;
+  </script>
+<div class="container">
+  <div class="">
+      <table class="small" style="height:120mm;">
+          <tr>
+              <td colspan="2">
+                  <input id="selection1" type="button" name="veganTahini" value="Vegan Chocolate Tahini Cookie" onclick="itemSelection('selection1')" style="display:inline-block;height:60%;width:100%;background:white;">
+              </td>
+          </tr>
+          <tr>
+              <td colspan="2">
+                  <input id="selection2" type="button" name="driedFruit" value="Dried Fruits Granola Bar" onclick="itemSelection('selection2')" style="display:inline-block;height:60%;width:100%;background:white;">
+              </td>
+          </tr>
+          <tr>
+              <td colspan="2">
+                  <input id="selection3" type="button" name="garnolaPeanuts" value="Granola Bar Peanuts" onclick="itemSelection('selection3')" style="display:inline-block;height:60%;width:100%;background:white;">
+              </td>
+          </tr>
+          <tr>
+              <td colspan="2">
+                  <input id="selection4" type="button" name="granolaAlmonds" value="Granola Bar Almond" onclick="itemSelection('selection4')" style="display:inline-block;height:60%;width:100%;background:white;">
+              </td>
+          </tr>
+          <tr>
+              <td colspan="2">
+                  <input id="selection5" type="button" name="peanutEnergy" value="Peanut Butter Energy Ball" onclick="itemSelection('selection5')" style="display:inline-block;height:60%;width:100%;background:white;">
+              </td>
+          </tr>
+          <tr>
+              <td colspan="2">
+                  <input id="selection6" type="button" name="lemonEnergy" value="Lemon Coconut Energy Ball" onclick="itemSelection('selection6')" style="display:inline-block;height:60%;width:100%;background:white;">
+              </td>
+          </tr>
+          <tr>
+              <td colspan="2">
+                  <input id="selection7" type="button" name="chocEnergy" value="Chocolate Energy Ball" onclick="itemSelection('selection7')" style="display:inline-block;height:60%;width:100%;background:white;">
+              </td>
+          </tr>
+          <tr>
+              <td colspan="2">
+                  <input id="selection0" type="button" name="none" value="Clear" onclick="itemSelection('selection0')" style="display:inline-block;height:70%;width:100%;background:black;color:white">
+              </td>
+          </tr>
+      </table>
   </div>
-</body>
-</html>
+  <div class="">
+      <table class="small" style="height:120mm;width:600px">
+          <form class="" action="labels-process.html" method="post">
+                        <tr style="height: 20mm;">
+                                    <td style="height:20mm;width:60mm;">
+                      <table style="height: 100%">
+                          <tr valign="middle">
+                          <td id="td1" align="center" colspan="2" style="height:21mm;visibility:visible;">
+                              <input id="1" type="hidden" name="labelSelection[]" value="none">
+                              <input class="bolded" id="btn1" type="button" disabled="true" value="Label 1" onclick="labelSelector(1)" style="display:inline-block;height:90%;width:100%;background:white;">
+                          </td>
+                          </tr>
+                            </table>
+                        </td>
+                                          <td style="height:20mm;width:60mm;">
+                      <table style="height: 100%">
+                          <tr valign="middle">
+                          <td id="td2" align="center" colspan="2" style="height:21mm;visibility:visible;">
+                              <input id="2" type="hidden" name="labelSelection[]" value="none">
+                              <input class="bolded" id="btn2" type="button" disabled="true" value="Label 2" onclick="labelSelector(2)" style="display:inline-block;height:90%;width:100%;background:white;">
+                          </td>
+                          </tr>
+                            </table>
+                        </td>
+                                          <td style="height:20mm;width:60mm;">
+                      <table style="height: 100%">
+                          <tr valign="middle">
+                          <td id="td3" align="center" colspan="2" style="height:21mm;visibility:visible;">
+                              <input id="3" type="hidden" name="labelSelection[]" value="none">
+                              <input class="bolded" id="btn3" type="button" disabled="true" value="Label 3" onclick="labelSelector(3)" style="display:inline-block;height:90%;width:100%;background:white;">
+                          </td>
+                          </tr>
+                            </table>
+                        </td>
+                                </tr>
+                        <tr style="height: 20mm;">
+                                    <td style="height:20mm;width:60mm;">
+                      <table style="height: 100%">
+                          <tr valign="middle">
+                          <td id="td4" align="center" colspan="2" style="height:21mm;visibility:visible;">
+                              <input id="4" type="hidden" name="labelSelection[]" value="none">
+                              <input class="bolded" id="btn4" type="button" disabled="true" value="Label 4" onclick="labelSelector(4)" style="display:inline-block;height:90%;width:100%;background:white;">
+                          </td>
+                          </tr>
+                            </table>
+                        </td>
+                                          <td style="height:20mm;width:60mm;">
+                      <table style="height: 100%">
+                          <tr valign="middle">
+                          <td id="td5" align="center" colspan="2" style="height:21mm;visibility:visible;">
+                              <input id="5" type="hidden" name="labelSelection[]" value="none">
+                              <input class="bolded" id="btn5" type="button" disabled="true" value="Label 5" onclick="labelSelector(5)" style="display:inline-block;height:90%;width:100%;background:white;">
+                          </td>
+                          </tr>
+                            </table>
+                        </td>
+                                          <td style="height:20mm;width:60mm;">
+                      <table style="height: 100%">
+                          <tr valign="middle">
+                          <td id="td6" align="center" colspan="2" style="height:21mm;visibility:visible;">
+                              <input id="6" type="hidden" name="labelSelection[]" value="none">
+                              <input class="bolded" id="btn6" type="button" disabled="true" value="Label 6" onclick="labelSelector(6)" style="display:inline-block;height:90%;width:100%;background:white;">
+                          </td>
+                          </tr>
+                            </table>
+                        </td>
+                                </tr>
+                        <tr style="height: 20mm;">
+                                    <td style="height:20mm;width:60mm;">
+                      <table style="height: 100%">
+                          <tr valign="middle">
+                          <td id="td7" align="center" colspan="2" style="height:21mm;visibility:visible;">
+                              <input id="7" type="hidden" name="labelSelection[]" value="none">
+                              <input class="bolded" id="btn7" type="button" disabled="true" value="Label 7" onclick="labelSelector(7)" style="display:inline-block;height:90%;width:100%;background:white;">
+                          </td>
+                          </tr>
+                            </table>
+                        </td>
+                                          <td style="height:20mm;width:60mm;">
+                      <table style="height: 100%">
+                          <tr valign="middle">
+                          <td id="td8" align="center" colspan="2" style="height:21mm;visibility:visible;">
+                              <input id="8" type="hidden" name="labelSelection[]" value="none">
+                              <input class="bolded" id="btn8" type="button" disabled="true" value="Label 8" onclick="labelSelector(8)" style="display:inline-block;height:90%;width:100%;background:white;">
+                          </td>
+                          </tr>
+                            </table>
+                        </td>
+                                          <td style="height:20mm;width:60mm;">
+                      <table style="height: 100%">
+                          <tr valign="middle">
+                          <td id="td9" align="center" colspan="2" style="height:21mm;visibility:visible;">
+                              <input id="9" type="hidden" name="labelSelection[]" value="none">
+                              <input class="bolded" id="btn9" type="button" disabled="true" value="Label 9" onclick="labelSelector(9)" style="display:inline-block;height:90%;width:100%;background:white;">
+                          </td>
+                          </tr>
+                            </table>
+                        </td>
+                                </tr>
+                        <tr style="height: 20mm;">
+                                    <td style="height:20mm;width:60mm;">
+                      <table style="height: 100%">
+                          <tr valign="middle">
+                          <td id="td10" align="center" colspan="2" style="height:21mm;visibility:visible;">
+                              <input id="10" type="hidden" name="labelSelection[]" value="none">
+                              <input class="bolded" id="btn10" type="button" disabled="true" value="Label 10" onclick="labelSelector(10)" style="display:inline-block;height:90%;width:100%;background:white;">
+                          </td>
+                          </tr>
+                            </table>
+                        </td>
+                                          <td style="height:20mm;width:60mm;">
+                      <table style="height: 100%">
+                          <tr valign="middle">
+                          <td id="td11" align="center" colspan="2" style="height:21mm;visibility:visible;">
+                              <input id="11" type="hidden" name="labelSelection[]" value="none">
+                              <input class="bolded" id="btn11" type="button" disabled="true" value="Label 11" onclick="labelSelector(11)" style="display:inline-block;height:90%;width:100%;background:white;">
+                          </td>
+                          </tr>
+                            </table>
+                        </td>
+                                          <td style="height:20mm;width:60mm;">
+                      <table style="height: 100%">
+                          <tr valign="middle">
+                          <td id="td12" align="center" colspan="2" style="height:21mm;visibility:visible;">
+                              <input id="12" type="hidden" name="labelSelection[]" value="none">
+                              <input class="bolded" id="btn12" type="button" disabled="true" value="Label 12" onclick="labelSelector(12)" style="display:inline-block;height:90%;width:100%;background:white;">
+                          </td>
+                          </tr>
+                            </table>
+                        </td>
+                                </tr>
+              <tr>
+          <td colspan="3" align="center">
+              <button type="submit" name="labels">Preview</button>
+          </td>
+      </tr>
+      </form>
+  </table>
+  </div>
+  <div class="">
+      &nbsp;
+  </div>
+  </div>
+  </body>
+  </html>
+
+  <!-- onClick="window.print()" -->
