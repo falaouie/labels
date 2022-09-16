@@ -5,6 +5,8 @@ let mainWindow;
 
 function createMainWindow() {
   mainWindow = new BrowserWindow({
+    width: 1024,
+    height: 768,
     backgroundColor: '#eceeee',
     webPreferences: {
       nodeIntegration: true,
@@ -18,7 +20,7 @@ function createMainWindow() {
 
   // show index.html when ready
   mainWindow.once('ready-to-show', () => {
-    mainWindow.maximize();
+    // mainWindow.maximize();
     mainWindow.show();
     // open dev tools Remove for production
     // mainWindow.webContents.openDevTools();

@@ -6,12 +6,9 @@
         <link rel="stylesheet" href="./css/labels.css">
     </head>
 <body> 
-<script>
-    let totalLabels=24;
-</script>
-<div class="main-container">
+<div>
 <div style="height:100%;">
-    <table class="small" style="height:500px">
+    <table class="side-table" style="height:500px; width: 200px;">
         <tr>
             <td colspan="2">
                 <input class"" id="selection1" type="button" name="veganTahini" value="Vegan Chocolate Tahini Cookie" onclick="itemSelection('selection1')" style="display:inline-block;height:60%;width:100%;background:white;">
@@ -65,38 +62,40 @@
     </table>
 </div>
 <div class="">
-    <table style="height:500px;">
+    <table style="height:500px; width:700px; border: 1px solid black; padding: 4px; margin-top: 6px;">
         <form class="" action="process_labels.php" method="post">
             <script>
-                let cntStart = 0;
-                let cntEnd = totalLabels;
+                let totalLabels=24;
+                let colCount = 3;
+                let rowCount = totalLabels/colCount;
                 let cnt=1;
-                for (row = 0; row < 8; row++) {
-                    document.write(" <tr style='height: 50px;'> ")
+                for (row = 0; row < rowCount; row++) {
+                    document.write(`<tr style="height: 50px;">`)
                     for (col = 1; col <= 3; col++) {
-                        document.write(`
-                        <td>
-                            <table style="height: 100%">
-                                <tr valign="middle">
-                                <td id="td`+cnt+`"  align="center" colspan="2" style="visibility:visible;">
-                                    <input id="`+cnt+`" type="hidden" name="labelSelection[]" value="none">
-                                    <input class="bolded" id="btn`+cnt+`" type="button" disabled="true" value="Label" onclick="labelSelector(`+1+`)" style="display:inline-block;height:90%;width: 100%;background:white;">
-                                </td>
-                                </tr>
-                            </table>
-                        </td> 
-                        `)
+                        document.write(
+                            `<td style="height: 50px; width: 200px;">
+                                <table>
+                                    <tr valign="middle>"
+                                        <td id="td`+cnt+`" align="center; style=visibility:visible;">
+                                            <input id=`+cnt+` type=hidden name=labelSelection[] value=none>
+                                            <input class=bolded id=btn`+cnt+` type=button disabled=true value=Label onclick=labelSelector(`+cnt+`) style="display:inline-block;height:90%;width: 100%;background:white;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        `);
+                        cnt++;
                     }
                     document.write(" </tr> ")
                 }
             </script>
-    <tr>
-        <td colspan="3" align="center" style="height:75px">
-            <button type="submit" name="labels">Preview</button>
-        </td>
-    </tr>
-    </form>
-</table>
+            <tr>
+                <td colspan="3" align="center" style="height:75px">
+                    <button type="submit" name="labels">Preview</button>
+                </td>
+            </tr>
+        </form>
+    </table>
 </div>
 <div class="">
     &nbsp;
