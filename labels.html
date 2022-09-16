@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="./css/labels.css">
     </head>
 <body> 
-<div>
+<div class="screen-only">
 <div style="height:100%;">
     <table class="side-table" style="height:500px; width: 200px;">
         <tr>
@@ -61,9 +61,9 @@
         </tr>
     </table>
 </div>
-<div class="">
+<div>
     <table style="height:500px; width:700px; border: 1px solid black; padding: 4px; margin-top: 6px;">
-        <form class="" action="process_labels.php" method="post">
+        <form class="" action="labels-process.html" method="post">
             <script>
                 let totalLabels=24;
                 let colCount = 3;
@@ -73,15 +73,13 @@
                     document.write(`<tr style="height: 50px;">`)
                     for (col = 1; col <= 3; col++) {
                         document.write(
-                            `<td style="height: 50px; width: 200px;">
-                                <table>
-                                    <tr valign="middle>"
-                                        <td id="td`+cnt+`" align="center; style=visibility:visible;">
-                                            <input id=`+cnt+` type=hidden name=labelSelection[] value=none>
-                                            <input class=bolded id=btn`+cnt+` type=button disabled=true value=Label onclick=labelSelector(`+cnt+`) style="display:inline-block;height:90%;width: 100%;background:white;">
-                                        </td>
-                                    </tr>
-                                </table>
+                            `<td style="height: 50px; width: 200px; border: 1px solid black">
+                                    <div valign="middle" style="height:100%; width:100%;">
+                                        <div id="td`+cnt+`" align="center"; style="visibility:visible;height:100%; width:100%;">
+                                            <input id="`+cnt+`" type="hidden" name="labelSelection[]" value="none">
+                                            <input id="btn`+cnt+`" type="button" disabled="true" value="Label `+cnt+`" onclick=labelSelector(`+cnt+`) style="display:inline-block;height:90%;width: 100%;background:white;">
+                                        </div>
+                                    </div>
                             </td>
                         `);
                         cnt++;
@@ -91,16 +89,41 @@
             </script>
             <tr>
                 <td colspan="3" align="center" style="height:75px">
-                    <button type="submit" name="labels">Preview</button>
+                    <div>
+                        <button class="submit-yellow-button" onClick="window.print()"><strong>Print LABELS</strong></button>
+                    </div>
                 </td>
             </tr>
         </form>
     </table>
 </div>
-<div class="">
-    &nbsp;
 </div>
-</div>
+<div class="main-container print-only">
+    <script>
+    for ($i=0; $i < 8 ; $i++) {
+       for ($col=0; $col < 3; $col++) {
+        document.write(`
+            <div class="label">
+                  <div class="label-heading">
+                      heading
+                  </div>
+                  <div class="label-content">
+                      content
+                  </div>
+                  <div class="label-footer">
+                      <div>
+                          Calories per ball
+                      </div>
+                      <div>
+                        <span>Best Before:</span>
+                      </div>
+                  </div>
+            </div>
+            `)
+        }
+    }
+    </script>
+  </div>
 
     <script type="text/javascript" src="./js/label_selector.js"></script>
 </body>

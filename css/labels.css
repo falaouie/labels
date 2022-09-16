@@ -7,6 +7,9 @@
     margin-right: 0mm;
   }
 
+  .print-only {
+    display: block;
+  }
   .screen-only {
       display: none;
   }
@@ -65,7 +68,6 @@
     margin: 0;
     padding: 0;
   }
-  
 
   .main-container {
     display: block;
@@ -76,6 +78,10 @@
     /* border: 0.1px solid lightgray; */
   }
 
+  .print-only {
+    display: none;
+  }
+  
   .label {
     display: inline-block;
     position: relative;
@@ -103,6 +109,25 @@
     display: block;
     min-height: 8mm;
     max-height: 8mm;
+  }
+
+  div button {
+    color:white;
+    background-color: black;
+    padding: 5px;
+    margin:5px;
+    font-size: 1em;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+  }
+
+  .submit-yellow-button {
+    background-color: #FDD017;
+    color: black;
+    padding: 5px;
+    border-radius: 1px;
+    margin:5px;
+    font-size: 1em;
+    display: inline-block;
   }
 
   /* .label-footer span {
