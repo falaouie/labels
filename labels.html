@@ -6,125 +6,127 @@
         <link rel="stylesheet" href="./css/labels.css">
     </head>
 <body> 
-<div class="screen-only">
 <div style="height:100%;">
-    <table class="side-table" style="height:500px; width: 200px;">
-        <tr>
-            <td colspan="2">
-                <input class"" id="selection1" type="button" name="veganTahini" value="Vegan Chocolate Tahini Cookie" onclick="itemSelection('selection1')" style="display:inline-block;height:60%;width:100%;background:white;">
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input class"" id="selection2" type="button" name="driedFruit" value="Dried Fruits Granola Bar" onclick="itemSelection('selection2')" style="display:inline-block;height:60%;width:100%;background:white;">
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input class"" id="selection3" type="button" name="garnolaPeanuts" value="Granola Bar Peanuts" onclick="itemSelection('selection3')" style="display:inline-block;height:60%;width:100%;background:white;">
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input class"" id="selection4" type="button" name="granolaAlmonds" value="Granola Bar Almond" onclick="itemSelection('selection4')" style="display:inline-block;height:60%;width:100%;background:white;">
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input class"" id="selection5" type="button" name="peanutEnergy" value="Peanut Butter Energy Ball" onclick="itemSelection('selection5')" style="display:inline-block;height:60%;width:100%;background:white;">
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input class"" id="selection6" type="button" name="lemonEnergy" value="Lemon Coconut Energy Ball" onclick="itemSelection('selection6')" style="display:inline-block;height:60%;width:100%;background:white;">
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input class"" id="selection7" type="button" name="chocEnergy" value="Chocolate Energy Ball" onclick="itemSelection('selection7')" style="display:inline-block;height:60%;width:100%;background:white;">
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input class"" id="selection8" type="button" name="gfveganTahini" value="GF Vegan Chocolate Tahini Cookie" onclick="itemSelection('selection8')" style="display:inline-block;height:60%;width:100%;background:white;">
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input class"" id="selection9" type="button" name="peanutbar" value="Peanut Bar" onclick="itemSelection('selection9')" style="display:inline-block;height:60%;width:100%;background:white;">
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input class"bolded" id="selection0" type="button" name="none" value="Clear" onclick="itemSelection('selection0')" style="display:inline-block;height:70%;width:100%;background:black;color:white">
-            </td>
-        </tr>
-    </table>
-</div>
-<div>
-    <table style="height:500px; width:700px; border: 1px solid black; padding: 4px; margin-top: 6px;">
-        <form class="" action="labels-process.html" method="post">
-            <script>
-                let totalLabels=24;
-                let colCount = 3;
-                let rowCount = totalLabels/colCount;
-                let cnt=1;
-                for (row = 0; row < rowCount; row++) {
-                    document.write(`<tr style="height: 50px;">`)
-                    for (col = 1; col <= 3; col++) {
-                        document.write(
-                            `<td style="height: 50px; width: 200px; border: 1px solid black">
-                                    <div valign="middle" style="height:100%; width:100%;">
-                                        <div id="td`+cnt+`" align="center"; style="visibility:visible;height:100%; width:100%;">
-                                            <input id="`+cnt+`" type="hidden" name="labelSelection[]" value="none">
-                                            <input id="btn`+cnt+`" type="button" disabled="true" value="Label `+cnt+`" onclick=labelSelector(`+cnt+`) style="display:inline-block;height:90%;width: 100%;background:white;">
-                                        </div>
-                                    </div>
-                            </td>
-                        `);
-                        cnt++;
-                    }
-                    document.write(" </tr> ")
-                }
-            </script>
+    <div class="screen-only">
+        <table class="side-table" style="height:500px; width: 200px;">
             <tr>
-                <td colspan="3" align="center" style="height:75px">
-                    <div>
-                        <button class="submit-yellow-button" onClick="window.print()"><strong>Print LABELS</strong></button>
-                    </div>
+                <td colspan="2">
+                    <input class"" id="selection1" type="button" name="veganTahini" value="Vegan Chocolate Tahini Cookie" onclick="itemSelection('selection1')" style="display:inline-block;height:60%;width:100%;background:white;">
                 </td>
             </tr>
-        </form>
-    </table>
-</div>
-</div>
-<div class="main-container print-only">
-    <script>
-    for ($i=0; $i < 8 ; $i++) {
-       for ($col=0; $col < 3; $col++) {
-        document.write(`
-            <div class="label">
-                  <div class="label-heading">
-                      heading
-                  </div>
-                  <div class="label-content">
-                      content
-                  </div>
-                  <div class="label-footer">
-                      <div>
-                          Calories per ball
-                      </div>
-                      <div>
-                        <span>Best Before:</span>
-                      </div>
-                  </div>
-            </div>
-            `)
-        }
-    }
-    </script>
-  </div>
+            <tr>
+                <td colspan="2">
+                    <input class"" id="selection2" type="button" name="driedFruit" value="Dried Fruits Granola Bar" onclick="itemSelection('selection2')" style="display:inline-block;height:60%;width:100%;background:white;">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input class"" id="selection3" type="button" name="garnolaPeanuts" value="Granola Bar Peanuts" onclick="itemSelection('selection3')" style="display:inline-block;height:60%;width:100%;background:white;">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input class"" id="selection4" type="button" name="granolaAlmonds" value="Granola Bar Almond" onclick="itemSelection('selection4')" style="display:inline-block;height:60%;width:100%;background:white;">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input class"" id="selection5" type="button" name="peanutEnergy" value="Peanut Butter Energy Ball" onclick="itemSelection('selection5')" style="display:inline-block;height:60%;width:100%;background:white;">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input class"" id="selection6" type="button" name="lemonEnergy" value="Lemon Coconut Energy Ball" onclick="itemSelection('selection6')" style="display:inline-block;height:60%;width:100%;background:white;">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input class"" id="selection7" type="button" name="chocEnergy" value="Chocolate Energy Ball" onclick="itemSelection('selection7')" style="display:inline-block;height:60%;width:100%;background:white;">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input class"" id="selection8" type="button" name="gfveganTahini" value="GF Vegan Chocolate Tahini Cookie" onclick="itemSelection('selection8')" style="display:inline-block;height:60%;width:100%;background:white;">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input class"" id="selection9" type="button" name="peanutbar" value="Peanut Bar" onclick="itemSelection('selection9')" style="display:inline-block;height:60%;width:100%;background:white;">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input class"bolded" id="selection0" type="button" name="none" value="Clear" onclick="itemSelection('selection0')" style="display:inline-block;height:70%;width:100%;background:black;color:white">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="screen-only">
+        <table style="height:500px; width:700px; border: 1px solid black; padding: 4px; margin-top: 6px;">
+            <form class="" action="" method="post">
+                <script>
+                    let totalLabels=24;
+                    let colCount = 3;
+                    let rowCount = totalLabels/colCount;
+                    let cnt=1;
+                    for (row = 0; row < rowCount; row++) {
+                        document.write(`<tr style="height: 50px;">`)
+                        for (col = 1; col <= 3; col++) {
+                            document.write(
+                                `<td style="height: 50px; width: 200px; border: 1px solid black">
+                                        <div valign="middle" style="height:100%; width:100%;">
+                                            <div id="td`+cnt+`" align="center"; style="visibility:visible;height:100%; width:100%;">
+                                                <input id="`+cnt+`" type="hidden" name="labelSelection[]" value="none">
+                                                <input id="btn`+cnt+`" type="button" disabled="true" value="Label `+cnt+`" onclick=labelSelector(`+cnt+`) style="display:inline-block;height:90%;width: 100%;background:white;">
+                                            </div>
+                                        </div>
+                                </td>
+                            `);
+                            cnt++;
+                        }
+                        document.write(" </tr> ")
+                    }
+                </script>
+                <tr>
+                    <td colspan="3" align="center" style="height:75px">
+                        <div>
+                            <button class="submit-yellow-button" onClick="printThis(this.form)"><strong>Print LABELS</strong></button>
+                        </div>
+                    </td>
+                </tr>
+            </form>
+        </table>
+    </div>
 
-    <script type="text/javascript" src="./js/label_selector.js"></script>
+    <div class="main-container print-only">
+        <script>
+        let prtCnt =1;
+        for ($i=0; $i < 8 ; $i++) {
+        for ($col=0; $col < 3; $col++) {
+            document.write(`
+                <div class="label">
+                    <div id="heading`+prtCnt+`" class="label-heading">
+                    </div>
+                    <div id="content`+prtCnt+`" class="label-content">
+                    </div>
+                    <div class="label-footer">
+                        <div id="calories`+prtCnt+`">
+                            Calories per ball
+                        </div>
+                        <div id="expiry`+prtCnt+`">
+                            <span>Best Before:</span>
+                        </div>
+                    </div>
+                </div>
+            `)
+            prtCnt++;
+            }
+        }
+        </script>
+    </div>
+</div>
+
+    <script type="text/javascript" src="./js/label_selector.js" defer></script>
+    <script type="text/javascript" src="./js/print.js" defer></script>
 </body>
 </html>

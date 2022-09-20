@@ -52,6 +52,7 @@ function labelSelector(id) {
 
   if (document.getElementById('btn' + id).value == 'Start Here #' + id) {
     document.getElementById('btn' + id).style.backgroundColor = 'limegreen';
+
     for (var i = 1; i <= 9; i++) {
       if (
         document.getElementById('selection' + i).style.backgroundColor ==
@@ -60,6 +61,9 @@ function labelSelector(id) {
         document.getElementById('btn' + id).value = document.getElementById(
           'selection' + i
         ).value;
+        // heading input start here
+        document.getElementById('heading' + id).innerText =
+          document.getElementById('selection' + i).value;
         document.getElementById(id).value = document.getElementById(
           'selection' + i
         ).name;
@@ -102,8 +106,10 @@ function labelSelector(id) {
             document.getElementById('btn' + i).style.backgroundColor =
               'limegreen';
             document.getElementById('btn' + i).value = selectionStartText;
+            document.getElementById('heading' + i).innerText =
+              selectionStartText;
             document.getElementById(i).value = selectionInput;
-            //  document.getElementById('btn'+i).disabled = true;
+            // alert('selection input ' + selectionInput);
           } else {
             finito = true;
             break;
